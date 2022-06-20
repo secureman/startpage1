@@ -10,7 +10,9 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="">
     <link href="https://fonts.googleapis.com/css2?family=Source+Code+Pro&amp;display=swap" rel="stylesheet">
-
+    <!-- <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.8.3/font/bootstrap-icons.css"> -->
+     <link rel="stylesheet" href="$HOME/githubs/startpage1/bootstrap-icons-1.8.3/bootstrap-icons.css"> 
+     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <!-- anime.js -->
     <script defer="" src="https://cdnjs.cloudflare.com/ajax/libs/animejs/3.2.1/anime.min.js"></script>
 </head>
@@ -25,9 +27,9 @@
     <main>
         <div id="content">
             <div id="head">
-                <form action="https://duckduckgo.com/">
-                    <label for="q" autofocus>> find / </label>
-                    <input type="text" name="q" autocomplete="off">
+                <form action="https://google.com/search">
+                    <label for="q" autofocus> search / </label>
+                    <input type="text" name="q" autocomplete="on">
                 </form>
                 <div id="info">
                     <p id="weatherDesc">Loading...</p>
@@ -36,43 +38,32 @@
             </div>
             <div id="links">
                 <section>
-                    <h3>section header</h3>
+                    <h3>index [1]</h3>
                         <ul>
-                            <li><a href="https://example.com">website text</a></li>
-                            <li><a href="https://example.com">website text</a></li>
-                            <li><a href="https://example.com">website text</a></li>
+                            <li><a href="https://reddit.com"target="_blank"><i class="bi-reddit" role="img" aria-label="Reddit"></i></a></li>
+                            <li><a href="https://Twitter.com"target="_blank"><i class="bi-twitter" role="img" aria-label="Twitter"></i></a></li>
+                            <li><a href="https://twitch.tv"target="_blank"><i class="bi-twitch" role="img" aria-label="Twitch"></i></a></li>
                         </ul>
                 </section>
                 <section>
-                    <h3>section header</h3>
+                    <h3>index [2]</h3>
                         <ul>
-                            <li><a href="https://example.com">website text</a></li>
-                            <li><a href="https://example.com">website text</a></li>
-                            <li><a href="https://example.com">website text</a></li>
+                            <li><a href="https://github.com"target="_blank"><i class="bi-github" role="img" aria-label="GitHub"></i></a></li>
+                            <li><a href="https://open.spotify.com/"target="_blank"><i class="bi-spotify" role="img" aria-label="Spotify"></i></a></li>
+                            <li><a href="https://youtube.com/"target="_blank"><i class="bi-youtube" role="img" aria-label="Youtube"></i></a></li>
                         </ul>
-                </section>
+               </section>
                 <section>
-                    <h3>section header</h3>
+                    <h3>index [3]</h3>
                         <ul>
-                            <li><a href="https://example.com">website text</a></li>
-                            <li><a href="https://example.com">website text</a></li>
-                            <li><a href="https://example.com">website text</a></li>
+                            <li><a href="https://facebook.com"target="_blank"><i class="bi-facebook" role="img" aria-label="Facebook"></i></a></li>
+                            <li><a href="https://binance.com/"target="_blank"><i style="font-size:19px" class="fa">&#xf15a;</i></a></li>
+                            <li><a href="https://mail.google.com/mail/u/0/"target="_blank"><i style="font-size:19px" class="fa">&#xf1a0;</i></a></li>
                         </ul>
-                </section>
-                <section>
-                    <h3>section header</h3>
-                        <ul>
-                            <li><a href="https://example.com">website text</a></li>
-                            <li><a href="https://example.com">website text</a></li>
-                            <li><a href="https://example.com">website text</a></li>
-                        </ul>
-                </section>
+                </section>  
             </div>
         </div>
     </main>
-    <footer>
-        <a href="https://github.com/eaaasun/startpage">Github</a>
-    </footer>
     <script type="module">
         // ----- CHANGE THESE VARIABLES
 
@@ -82,10 +73,10 @@
         const animated = true;
 
         // Read the documentation for setting the weather API key
-        const apiKey = "[API KEY]";
-        const lat = 40.7127861;
-        const lon = -74.0134275;
-        const units = "imperial";
+        const apiKey = "cf25d4294c96fe4af6a0ace1cd4fc17c";
+        const lat = 35.9311;
+        const lon = 0.0909;
+        const units = "metrics";
 
         // ----- DON'T TOUCH ANYTHING BELOW THIS UNLESS YOU KNOW WHAT YOU'RE DOING
 
