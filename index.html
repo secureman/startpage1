@@ -5,13 +5,13 @@
     <meta charset="UTF-8">
     <title>~/startpage</title>
     <link rel="stylesheet" type="text/css" href="style.css">
-
+    <script defer="" src="./script.js"></script>
     <!-- google fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="">
     <link href="https://fonts.googleapis.com/css2?family=Source+Code+Pro&amp;display=swap" rel="stylesheet">
     <!-- <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.8.3/font/bootstrap-icons.css"> -->
-     <link rel="stylesheet" href="$HOME/githubs/startpage1/bootstrap-icons-1.8.3/bootstrap-icons.css"> 
+     <link rel="stylesheet" href="./bootstrap-icons-1.8.3/bootstrap-icons.css"> 
      <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <!-- anime.js -->
     <script defer="" src="https://cdnjs.cloudflare.com/ajax/libs/animejs/3.2.1/anime.min.js"></script>
@@ -27,13 +27,20 @@
     <main>
         <div id="content">
             <div id="head">
-                <form action="https://google.com/search">
+                <form action="https://google.com/search"target="_blank">
                     <label for="q" autofocus> search / </label>
-                    <input type="text" name="q" autocomplete="on">
+                    <input type="text" name="q" autocomplete="off">
                 </form>
-                <div id="info">
-                    <p id="weatherDesc">Loading...</p>
-                    <p id="temp">Loading...</p>
+                <div class="weather">
+                    <div class="city"></div>
+                    <div class="flex">
+                        <img src="" alt="" class="icon"/>
+                        <h4><div class="Wdescription"</div></h4>
+                    </div>
+                     <div class="humidity"></div>
+                     <div class="windspeed"></div>
+                     <div class="feelslike"></div>
+                     <div class="temp"></div>
                 </div>
             </div>
             <div id="links">
@@ -64,115 +71,6 @@
             </div>
         </div>
     </main>
-    <script type="module">
-        // ----- CHANGE THESE VARIABLES
-
-        // Do you want to show the weather?
-        const weather = true;
-        // Do you want animations?
-        const animated = true;
-
-        // Read the documentation for setting the weather API key
-        const apiKey = "cf25d4294c96fe4af6a0ace1cd4fc17c";
-        const lat = 35.9311;
-        const lon = 0.0909;
-        const units = "metrics";
-
-        // ----- DON'T TOUCH ANYTHING BELOW THIS UNLESS YOU KNOW WHAT YOU'RE DOING
-
-        var weatherEl = document.getElementById("weatherDesc");
-        var tempEl = document.getElementById("temp");
-
-        if (weather) {
-            var apiLink =
-                "https://api.openweathermap.org/data/2.5/weather?lat=" +
-                lat +
-                "&lon=" +
-                lon +
-                "&units=" +
-                units +
-                "&appid=" +
-                apiKey;
-            console.log(apiLink);
-            // grabs json data from url, thanks https://stackoverflow.com/a/35970894
-            var getJSON = function (url, callback) {
-                var xhr = new XMLHttpRequest();
-                xhr.open("GET", url, true);
-                xhr.responseType = "json";
-                xhr.onload = function () {
-                    var status = xhr.status;
-                    if (status === 200) {
-                        callback(null, xhr.response);
-                    } else {
-                        callback(status, xhr.response);
-                    }
-                };
-                xhr.send();
-            };
-
-            // gets city name from weather api
-            getJSON(apiLink, function (err, data) {
-                if (err !== null) {
-                    weatherEl.innerText = "";
-                    tempEl.innerText = "";
-                } else {
-                    var city = data.name;
-                    var temp = data.main.temp;
-                    var hiTemp = data.main.temp_max;
-                    var loTemp = data.main.temp_min;
-                    var weatherDesc = data.weather[0].description;
-                    weatherEl.innerHTML =
-                        weatherDesc + " in " + city;
-                    tempEl.innerHTML = "h: " + hiTemp + "° / c: " + temp + "° / l: " + loTemp + "°";
-                }
-            });
-        } else {
-            weatherEl.innerText = "";
-            tempEl.innerText = "";
-        }
-
-
-
-        if (animated) {
-            // hides all elements
-            document.querySelectorAll("*").forEach(el => el.style.opacity = 0);
-
-            // anime.js animation function
-            function playAnimation() {
-                var tl = anime.timeline({
-                    easing: "easeInOutExpo",
-                    duration: 2000,
-                });
-
-                tl.add({
-                    targets: "#img",
-                    opacity: [0, 1],
-                    translateY: [100, 0],
-                })
-                    .add(
-                        {
-                            targets: "#img",
-                            width: ["100%", "60%"],
-                        },
-                        "-=1200"
-                    )
-                    .add(
-                        {
-                            targets: "main *",
-                            opacity: [0, 1],
-                            translateY: [10, 0],
-                            delay: anime.stagger(15),
-                        },
-                        "-=1800"
-                    );
-            }
-
-            window.onload = function () {
-                document.querySelectorAll("*").forEach(el => el.style.opacity = 1);
-                playAnimation();
-            }
-        }
-    </script>
 </body>
 
 </html>

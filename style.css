@@ -161,3 +161,39 @@ a:hover {
     opacity: 1;
   }
 }
+.flex {
+  display: flex;
+}
+
+.city {
+  text-transform: capitalize;
+}
+.temp {
+  text-transform: capitalize;
+}
+.humidity {
+  text-transform: capitalize;
+}
+.windspeed {
+  text-transform: capitalize;
+}
+
+.windspeed {
+  line-height: 1.6;
+}
+.icon {
+  text-indent: -10px;
+}
+.Wdescription {
+  text-indent: 5px;
+}
+
+.humidity {
+  text-indent: 30px;
+}
+.windspeed {
+  text-indent: 50px;
+}
+.temp {
+  text-indent: 70px;
+}
