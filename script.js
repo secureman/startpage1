@@ -23,3 +23,45 @@
         }
     }   
 weather.fetchweather("mostaganem");
+
+const animated = true;
+
+        if (animated) {
+            // hides all elements
+            document.querySelectorAll("*").forEach(el => el.style.opacity = 0);
+
+            // anime.js animation function
+            function playAnimation() {
+                var tl = anime.timeline({
+                    easing: "easeInOutExpo",
+                    duration: 2000,
+                });
+
+                tl.add({
+                    targets: "#img",
+                    opacity: [0, 1],
+                    translateY: [100, 0],
+                })
+                    .add(
+                        {
+                            targets: "#img",
+                            width: ["100%", "60%"],
+                        },
+                        "-=1200"
+                    )
+                    .add(
+                        {
+                            targets: "main *",
+                            opacity: [0, 1],
+                            translateY: [10, 0],
+                            delay: anime.stagger(15),
+                        },
+                        "-=1800"
+                    );
+            }
+
+            window.onload = function () {
+                document.querySelectorAll("*").forEach(el => el.style.opacity = 1);
+                playAnimation();
+            }
+        }
