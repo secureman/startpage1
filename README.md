@@ -1,12 +1,7 @@
 # Startpage <!-- omit in toc --> 
 
-[Live preview (no weather as to not leak API key)](https://startpage.easun.me)
-
-
 ![startpage](preview.png)
 
-
-<!-- [Live Preview](https://kencx.github.io/startpage/) -->
 ## Table of Contents <!-- omit in toc --> 
 - [Installation](#installation)
 	- [Materials](#materials)
@@ -28,17 +23,17 @@
 
 #### Basic Setup
 
-1. Grab the latest [release](https://github.com/eaaasun/startpage/releases/latest)
+1. Grab the latest [release]
 2. Unzip files and move to a convenient location (e.g. Documents)
 3. Go into your browser settings (Firefox: `about:preferences`, Chrome/chromium-based: `chrome://settings/`)
 4. Set the homepage to `file:///[PATH TO STARTPAGE]/index.html` (example: `file:///D:/documents/startpage/index.html`)
 5. Open the homepage and check if things are working. There will be no weather data, and we will fix as part of the next step.
 6. Open index.html in your code editor of choice.
    1. Find the `<section>` elements and replace the `website text`, `section header`, and `https://example.com` with your own links and text. You can copy-paste or delete the `<section>` elements to fit your needs (I recommend a maximum of 3-4 sections).
-   2. If you want the weather to be displayed, leave the `weather` variable as-is. Otherwise, change it to `false` and skip the rest of this step.
-   3. In the `<script>` tag, replace the `[API KEY]` with your own OpenWeatherMap API key. (See [here](#getting-an-openweathermap-api-key) for instructions.)
-   4. In the `<script>` tag, replace the `lon` and `lat` variables with your own longitude and latitude respectively.
-   5. In the `<script>` tag, change the `units` variable to either `imperial` or `metric`.
+   2. open script.js
+   3. In the `apiKey` variable, replace the `[API KEY]` with your own OpenWeatherMap API key. (See [here](#getting-an-openweathermap-api-key) for instructions.)
+   4. In the `weather.fetchweather("city")` variable, replace the `city` variable with your own.
+   5. In the `units` Url variable, change the `units` variable to either `imperial` or `metric`.
 7. If you want to replace the image, replace the `image.gif` file with your own image/gif of choice.
 8. You should now have a working startpage!
 
